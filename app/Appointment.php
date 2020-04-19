@@ -21,6 +21,7 @@ class Appointment extends Model
     ];
 
     protected $fillable = [
+        'status',
         'comments',
         'client_id',
         'start_time',
@@ -33,12 +34,12 @@ class Appointment extends Model
 
     public function client()
     {
-        return $this->belongsTo(Client::class, 'employee_id');
+        return $this->belongsTo(Client::class, 'client_id');
     }
 
     public function employee()
     {
-        return $this->belongsTo(Employee::class, 'client_id');
+        return $this->belongsTo(Employee::class, 'employee_id');
     }
 
     public function getStartTimeAttribute($value)

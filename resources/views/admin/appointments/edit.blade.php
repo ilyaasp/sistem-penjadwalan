@@ -60,6 +60,25 @@
                     {{ trans('cruds.appointment.fields.finish_time_helper') }}
                 </p>
             </div>
+            <div class="form-group {{ $errors->has('status') ? 'has-error' : '' }}">
+                <label for="finish_time">Pilih yang akan anda lakukan terhadap {{ trans('cruds.appointment.fields.status') }}:</label><br>
+                <label for="status">
+                    <input type="radio" name="status" id="1" value="1" <?php echo ($appointment->status == 1) ?  "checked" : "" ;  ?> >
+                    Selesaikan (Batalkan)
+                </label>
+                <label for="status">
+                    <input type="radio" name="status" id="0" value="0" <?php echo ($appointment->status == 0) ?  "checked" : "" ;  ?> >
+                    Aktifkan
+                </label>
+                @if($errors->has('status'))
+                    <em class="invalid-feedback">
+                        {{ $errors->first('status') }}
+                    </em>
+                @endif
+                <p class="helper-block">
+                    {{ trans('cruds.appointment.fields.status_helper') }}
+                </p>
+            </div>
             <div class="form-group {{ $errors->has('comments') ? 'has-error' : '' }}">
                 <label for="comments">{{ trans('cruds.appointment.fields.comments') }}</label>
                 <textarea id="comments" name="comments" class="form-control ">{{ old('comments', isset($appointment) ? $appointment->comments : '') }}</textarea>

@@ -58,6 +58,9 @@ class AppointmentsController extends Controller
             $table->editColumn('comments', function ($row) {
                 return $row->comments ? $row->comments : "";
             });
+            $table->editColumn('status', function ($row) {
+                return $row->status ? 0 : 1;
+            });
             $table->editColumn('services', function ($row) {
                 $labels = [];
 
@@ -68,7 +71,7 @@ class AppointmentsController extends Controller
                 return implode(' ', $labels);
             });
 
-            $table->rawColumns(['actions', 'placeholder', 'client', 'employee', 'services']);
+            $table->rawColumns(['actions', 'placeholder', 'client', 'employee', 'status','services']);
 
             return $table->make(true);
         }

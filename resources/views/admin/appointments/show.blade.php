@@ -20,6 +20,22 @@
                     </tr>
                     <tr>
                         <th>
+                            {{ trans('cruds.appointment.fields.status') }}
+                        </th>
+                        <td>
+                            @if ($appointment->status == 0)
+                                <div class="badge badge-primary">
+                                    Masih Aktif
+                                </div>
+                            @else
+                                <div class="badge badge-primary">
+                                    Telah Dibatalkan
+                                </div>
+                            @endif
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
                             {{ trans('cruds.appointment.fields.client') }}
                         </th>
                         <td>

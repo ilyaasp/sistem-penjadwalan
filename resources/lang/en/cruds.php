@@ -133,6 +133,8 @@ return [
         'fields'         => [
             'id'                 => 'ID',
             'id_helper'          => '',
+            'status'             => 'Status',
+            'status_helper'      => '',
             'client'             => 'Student',
             'client_helper'      => '',
             'employee'           => 'Lecturer',

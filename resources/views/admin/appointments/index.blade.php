@@ -35,9 +35,9 @@
                     </th>
                     <th>
                         {{ trans('cruds.appointment.fields.finish_time') }}
-                    </th>
+                    </th>                   
                     <th>
-                        {{ trans('cruds.appointment.fields.comments') }}
+                        {{ trans('cruds.appointment.fields.status') }}
                     </th>
                     <th>
                         {{ trans('cruds.appointment.fields.services') }}

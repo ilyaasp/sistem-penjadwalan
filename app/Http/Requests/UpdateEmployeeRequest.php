@@ -27,7 +27,7 @@ class UpdateEmployeeRequest extends FormRequest
             ],
             'services'   => [
                 'array',
-            ],
+            ],    
         ];
     }
 }

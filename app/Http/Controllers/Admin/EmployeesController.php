@@ -118,6 +118,7 @@ class EmployeesController extends Controller
     public function update(UpdateEmployeeRequest $request, Employee $employee)
     {
         $employee->update($request->all());
+
         $employee->services()->sync($request->input('services', []));
 
         if ($request->input('photo', false)) {
@@ -127,6 +128,8 @@ class EmployeesController extends Controller
         } elseif ($employee->photo) {
             $employee->photo->delete();
         }
+
+        $employee->update($request->all());
 
         return redirect()->route('admin.employees.index');
     }
